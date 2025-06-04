@@ -8,7 +8,7 @@ import { app } from "./lib/socket.js";
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["http://localhost:5173"], // Adjust this to your frontend URL
+    origin: ["http://localhost:5173", "https://chatty-2zlb.onrender.com"], // Adjust this to your frontend URL
     credentials: true,
     allowedHeaders: "Content-Type, Authorization"
   })
