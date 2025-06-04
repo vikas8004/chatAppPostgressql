@@ -86,10 +86,10 @@ export const logout = asyncHanlder(async (req, res, next) => {
     return new ErrorResponse("User not found", 404).send(res);
   }
   // Clear the token cookie
-  res.clearCookie("token", {
+  res.cookie("token", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    sameSite: "none",
     maxAge: 0 // Set maxAge to 0 to delete the cookie
   });
   return new ApiResponse(null, "User logged out successfully", 200).send(res);
